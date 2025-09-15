@@ -10,13 +10,17 @@ public class Basketball : MonoBehaviour
     private Rigidbody ballRb;
     private bool isTossed = false;
     private float zBoundry = 8f;
+    private float yBoundryMax = 3.5f;
+    private float yBoundryMin = 1.5f;
     private float horizontalInput;
+    private float verticalInput;
     private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
         ballRb = GetComponent<Rigidbody>();
+        ballRb.useGravity = false;
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
@@ -29,9 +33,12 @@ public class Basketball : MonoBehaviour
         if (!isTossed)
         {
             horizontalInput = Input.GetAxis("Horizontal");
+            verticalInput = Input.GetAxis("Vertical");
             transform.Translate(Vector3.forward * horizontalInput * moveSpeed * Time.deltaTime);
+            transform.Translate(Vector3.up * verticalInput * moveSpeed * Time.deltaTime);
             float zPos = Mathf.Clamp(transform.position.z, -zBoundry, zBoundry);
-            transform.position = new Vector3(transform.position.x, transform.position.y, zPos);
+            float yPos =  Mathf.Clamp(transform.position.y, yBoundryMin, yBoundryMax);
+            transform.position = new Vector3(transform.position.x, yPos, zPos);
         }
 
         if (Input.GetKeyDown(KeyCode.Space) &&!isTossed)
@@ -42,6 +49,7 @@ public class Basketball : MonoBehaviour
     void TossBall()
     {
         isTossed = true;
+        ballRb.useGravity = true;
         ballRb.AddForce(new Vector3(-1, 2.2f, 0) * force, ForceMode.Impulse);
         ballRb.AddTorque(new Vector3(0, 0, -1) * force, ForceMode.Impulse);
         gameManager.SpawnBall();
