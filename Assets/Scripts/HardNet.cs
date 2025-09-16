@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HardNet : Net
+public class HardNet : Net// INHERITANCE
 {
-    protected override void Move()
+    protected override void Move()// POLYMORPHISM
     {
         // move the net along z axis
         if (transform.position.z > zBoundary)

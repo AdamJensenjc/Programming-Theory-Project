@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     private int score;
     private int gameTime = 60;
     private float spawnCD = 1f;
-    public bool isGameActive { get; private set; }
+    public bool isGameActive { get; private set; }// ENCAPSULATION
 
     private void Start()
     {
@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
         timeText.text = "Time: " + timer;
     }
 
-    private void SetDifficulty(Difficulty difficulty)
+    private void SetDifficulty(Difficulty difficulty)// ABSTRACTION
     {
         switch(difficulty)
         {
@@ -54,6 +54,8 @@ public class GameManager : MonoBehaviour
                 break;
             case Difficulty.Hard:
                 net.AddComponent<HardNet>();
+                break;
+            default:
                 break;
         }
     }
@@ -71,7 +73,7 @@ public class GameManager : MonoBehaviour
     }
 
     // Update score with value from target clicked
-    public void UpdateScore(int scoreToAdd)
+    public void UpdateScore(int scoreToAdd)// ABSTRACTION
     {
         if (isGameActive)
         {
@@ -86,7 +88,7 @@ public class GameManager : MonoBehaviour
     }
 
     // Stop game, bring up game over text and restart button
-    public void GameOver()
+    public void GameOver()// ABSTRACTION
     {
         gameOverText.gameObject.SetActive(true);
         restartButton.gameObject.SetActive(true);
