@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 365d6aa3f2db3a248a60242d4ee3ef2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficulty: 3
+  difficulty: 2
 --- !u!1 &355597593
 GameObject:
   m_ObjectHideFlags: 0
@@ -2232,7 +2232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 365d6aa3f2db3a248a60242d4ee3ef2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficulty: 1
+  difficulty: 0
 --- !u!1 &1081222775
 GameObject:
   m_ObjectHideFlags: 0
@@ -2571,18 +2571,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 842a64c8bd2acec4ba0479fed6cc18fd, type: 3}
---- !u!114 &1431190199 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2427178394781676789, guid: c3332f89f6736ab459429e869101fa0b,
-    type: 3}
-  m_PrefabInstance: {fileID: 6108068337842894348}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fc4129e005fa1245be4ab101e170d62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1577846683
 GameObject:
   m_ObjectHideFlags: 0
@@ -2952,6 +2940,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1877373117 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5362757226691108826, guid: c3332f89f6736ab459429e869101fa0b,
+    type: 3}
+  m_PrefabInstance: {fileID: 6108068337842894348}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1879721452
 GameObject:
   m_ObjectHideFlags: 0
@@ -3086,7 +3080,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 365d6aa3f2db3a248a60242d4ee3ef2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficulty: 2
+  difficulty: 1
 --- !u!1 &1899638121
 GameObject:
   m_ObjectHideFlags: 0
@@ -3232,12 +3226,11 @@ MonoBehaviour:
     type: 3}
   spawnPosition: {x: 13.87, y: 1.5, z: 0}
   counter: {fileID: 609587192}
-  net: {fileID: 1431190199}
+  net: {fileID: 1877373117}
   scoreParticle: {fileID: 6299468115359657815, guid: 6cbc21f5e9162483993a2b84b14d5ac8,
     type: 3}
   scoreSound: {fileID: 8300000, guid: ff17dd0126a9f6e4583075d41a6f406d, type: 3}
   gameOverSound: {fileID: 8300000, guid: d09555c42dc6aa64285ade0fcf3a0437, type: 3}
-  isGameActive: 0
 --- !u!4 &2096666799
 Transform:
   m_ObjectHideFlags: 0

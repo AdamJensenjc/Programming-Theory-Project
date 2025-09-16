@@ -3,11 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum Difficulty
+{
+    Easy,
+    Medium,
+    Hard
+}
+
 public class DifficultyButton : MonoBehaviour
 {
+    public Difficulty difficulty;
     private Button button;
     private GameManager gameManager;
-    public float difficulty;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +29,6 @@ public class DifficultyButton : MonoBehaviour
     */
     void SetDifficulty()
     {
-        Debug.Log(button.gameObject.name + " was clicked");
         gameManager.StartGame(difficulty);
     }
 }

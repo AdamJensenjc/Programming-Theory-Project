@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Net : MonoBehaviour
+public abstract class Net : MonoBehaviour
 {
-    private float zSpeed = 2f;
-    private float ySpeed = 0.4f;
-    private int zDirection = 1; // 1 for right, -1 for left
-    private int yDirection = 1; // 1 for up, -1 for down
-    private float zBoundary = 10f;
-    private float yBoundaryMin = -4.5f;
-    private float yBoundaryMax = -2.5f;
+    protected float zSpeed = 2f;
+    protected float ySpeed = 0.6f;
+    protected int zDirection = 1; // 1 for right, -1 for left
+    protected int yDirection = 1; // 1 for up, -1 for down
+    protected float zBoundary = 10f;
+    protected float yBoundaryMin = -4.5f;
+    protected float yBoundaryMax = -1.5f;
     private GameManager gameManager;
 
     void Start()
@@ -29,32 +29,9 @@ public class Net : MonoBehaviour
     {
         if (gameManager.isGameActive)
         {
-            // move the net along z axis
-            if (transform.position.z > zBoundary)
-            {
-                zDirection = -1;
-            }
-            else if (transform.position.z < -zBoundary)
-            {
-                zDirection = 1;
-            }
-
-            // move the net along y axis
-            if (transform.position.y > yBoundaryMax)
-            {
-                yDirection = -1;
-            }
-            else if (transform.position.y < yBoundaryMin)
-            {
-                yDirection = 1;
-            }
-
-            // calculate the new position of the net
-            Vector3 newPosition = transform.position;
-            newPosition.z += zDirection * zSpeed * Time.deltaTime;
-            newPosition.y += yDirection * ySpeed * Time.deltaTime;
-
-            transform.position = newPosition;
+            Move();
         }
     }
+
+    protected abstract void Move();
 }

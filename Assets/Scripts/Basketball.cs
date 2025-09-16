@@ -10,7 +10,7 @@ public class Basketball : MonoBehaviour
     private Rigidbody ballRb;
     private bool isTossed = false;
     private float zBoundry = 8f;
-    private float yBoundryMax = 3.5f;
+    private float yBoundryMax = 4.5f;
     private float yBoundryMin = 1.5f;
     private float horizontalInput;
     private float verticalInput;

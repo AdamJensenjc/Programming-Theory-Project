@@ -78,7 +78,6 @@ GameObject:
   - component: {fileID: 7913472115171976537}
   - component: {fileID: 6981854530598169153}
   - component: {fileID: 4506743628880868310}
-  - component: {fileID: 2427178394781676789}
   m_Layer: 0
   m_Name: Ring
   m_TagString: Untagged
@@ -175,15 +174,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3944073510091631902, guid: 39cdb67551e295b4eb562c1180c6b15a, type: 3}
---- !u!114 &2427178394781676789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5362757226691108826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fc4129e005fa1245be4ab101e170d62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
